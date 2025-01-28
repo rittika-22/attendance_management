@@ -31,8 +31,8 @@ public class LogIn1 extends JFrame {
         panel.setLayout(null);
         panel.setBackground(new Color(240, 248, 255)); // Light Blue Background
 
-        JLabel lblTitle = new JLabel("Welcome Back!");
-        lblTitle.setBounds(120, 20, 200, 30);
+        JLabel lblTitle = new JLabel("Welcome!!");
+        lblTitle.setBounds(160, 20, 200, 30);
         lblTitle.setFont(new Font("Arial", Font.BOLD, 20));
         lblTitle.setForeground(new Color(30, 144, 255));
         panel.add(lblTitle);
