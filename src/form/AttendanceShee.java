@@ -64,11 +64,6 @@ public class AttendanceShee extends JFrame {
         JButton saveButton = createStyledButton("Save Changes");
         saveButton.addActionListener(e -> JOptionPane.showMessageDialog(null, "Changes saved to the database."));
         
-        JButton addRowButton = createStyledButton("Add Row");
-        addRowButton.addActionListener(e -> {
-            model.addNewRow();
-            JOptionPane.showMessageDialog(null, "New row added.");
-        });
          
         JButton backButton = createStyledButton("Back to Dashboard");
         backButton.addActionListener(e -> {
@@ -80,7 +75,6 @@ public class AttendanceShee extends JFrame {
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(refreshButton);
         buttonPanel.add(saveButton);
-        buttonPanel.add(addRowButton);
         buttonPanel.add(backButton);
 
         getContentPane().setLayout(new BorderLayout());
@@ -138,13 +132,6 @@ public class AttendanceShee extends JFrame {
             names[27] = "Total Attendance";
             names[28] = "Attendance %";
             return names;
-        }
-        
-        public void addNewRow() {
-            Object[][] newData = new Object[data.length + 1][columnNames.length];
-            System.arraycopy(data, 0, newData, 0, data.length);
-            data = newData;
-            fireTableDataChanged();
         }
         
         // Fetch data from the database
