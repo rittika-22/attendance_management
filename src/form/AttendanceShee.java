@@ -89,7 +89,7 @@ public class AttendanceShee extends JFrame {
 
     private JButton createStyledButton(String text) {
         JButton button = new JButton(text);
-        button.setFont(new Font("Arial", Font.BOLD, 14));
+        button.setFont(new Font("Arial", Font.BOLD, 16));
         button.setBackground(new Color(33, 150, 243));
         button.setForeground(Color.WHITE);
         button.setFocusPainted(false);
@@ -197,7 +197,7 @@ public class AttendanceShee extends JFrame {
         public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
             if (columnIndex >= 2 && columnIndex <= 26) {
                 String value = aValue.toString().trim();
-                if (value.equalsIgnoreCase("P") || value.equalsIgnoreCase("A") || value.equalsIgnoreCase("L")) {
+                if (value.equalsIgnoreCase("P")||value.equalsIgnoreCase("p")|| value.equalsIgnoreCase("A") ||value.equalsIgnoreCase("a")|| value.equalsIgnoreCase("L")||value.equalsIgnoreCase("l")) {
                     data[rowIndex][columnIndex] = value;
                     updateDatabase(rowIndex, columnIndex, value); // Update the database
                     updateAttendanceCount(rowIndex);
@@ -275,10 +275,19 @@ public class AttendanceShee extends JFrame {
                 case "P":
                     cell.setBackground(new Color(144, 238, 144)); // Light green for Present
                     break;
+                    case "p":
+                    cell.setBackground(new Color(144, 238, 144)); // Light green for Present
+                    break;
                 case "A":
                     cell.setBackground(new Color(255, 99, 71)); // Light red for Absent
                     break;
+                case "a":
+                    cell.setBackground(new Color(255, 99, 71)); // Light red for Absent
+                    break;
                 case "L":
+                    cell.setBackground(new Color(255, 223, 0)); // Yellow for Late
+                    break;
+                 case "l":
                     cell.setBackground(new Color(255, 223, 0)); // Yellow for Late
                     break;
                 default:
@@ -291,5 +300,4 @@ public class AttendanceShee extends JFrame {
         return cell;
     }
 }
-
 }
